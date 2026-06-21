@@ -1,332 +1,41 @@
-Action: file_editor create /app/frontend/src/App.js --file-text "import \"@/App.css\";
+import "./App.css";
 
-const STAFF_FORM = \"https://forms.gle/eamStoZ1VhTw4ZAaA\";
-const CUSTOMER_FORM = \"https://forms.gle/LUFCjEA1aNBX9vd26\";
-const CUSTOMER_PHONE = \"9454111177\";
-const STAFF_PHONE = \"9044251050\";
+const STAFF_FORM = "https://forms.gle/eamStoZ1VhTw4ZAaA";
+const CUSTOMER_FORM = "https://forms.gle/LUFCjEA1aNBX9vd26";
+const CUSTOMER_PHONE = "9454111177";
+const STAFF_PHONE = "9044251050";
 const WHATSAPP = `https://wa.me/91${CUSTOMER_PHONE}`;
-const EMAIL = \"Helppathsarthi@gmail.com\";
+const EMAIL = "Helppathsarthi@gmail.com";
 
 const PLANS = [
-  {
-    id: \"basic\",
-    name: \"सारथी बेसिक\",
-    price: \"₹999\",
-    duration: \"6 महीने\",
-    highlight: false,
-    features: [
-      \"वेरीफाइड स्टाफ (Aadhaar + Police Verification)\",
-      \"बेसिक ट्रेनिंग\",
-      \"1 Replacement\",
-    ],
-  },
-  {
-    id: \"standard\",
-    name: \"सारथी स्टैंडर्ड\",
-    price: \"₹1,499\",
-    duration: \"1 साल\",
-    highlight: false,
-    features: [
-      \"वेरीफाइड स्टाफ\",
-      \"Proper Training (व्यवहार + शिष्टाचार)\",
-      \"3 Replacements (उपलब्धता के अनुसार)\",
-      \"Backup Support\",
-    ],
-  },
-  {
-    id: \"premium\",
-    name: \"सारथी प्रीमियम\",
-    price: \"₹1,999\",
-    duration: \"1 साल (Combo)\",
-    highlight: true,
-    features: [
-      \"वेरीफाइड स्टाफ\",
-      \"हर छोटी से बड़ी ट्रेनिंग\",
-      \"बोलचाल, रहन-सहन, ड्रेस कोड का पालन\",
-      \"स्वच्छता एवं डिजिटल अनुशासन\",
-      \"5 Replacements\",
-      \"Backup Support\",
-      \"Basic + Standard दोनों का Combo Pack\",
-    ],
-  },
-];
-
-const STANDARDS = [
-  {
-    title: \"बोलचाल एवं सम्मानजनक संबोधन\",
-    desc: '\"हाँ जी आया\" का अचूक नियम; पापा जी, दादी जी, भैया जी जैसे आदरसूचक संबोधन; मर्यादित संवाद।',
-    icon: \"🗣️\",
-  },
-  {
-    title: \"परिसर मर्यादा एवं भोजन शिष्टाचार\",
-    desc: \"मुख्य फर्नीचर पर बैठने पर पूर्ण प्रतिबंध; निर्धारित स्टाफ स्थान पर ही भोजन; घरेलू उपकरणों का अनधिकृत उपयोग वर्जित।\",
-    icon: \"🏠\",
-  },
-  {
-    title: \"स्वच्छता एवं डिजिटल अनुशासन\",
-    desc: \"साफ-सुथरे धुले कपड़े, संवरे बाल, कटे नाखून; मोबाइल साइलेंट, ईयरफोन/सोशल मीडिया वर्जित; कार्यस्थल की फोटो/वीडियो प्रतिबंधित।\",
-    icon: \"✨\",
-  },
+  { id: "basic", name: "सारथी बेसिक", price: "₹999", duration: "6 महीने", highlight: false, features: ["वेरीफाइड स्टाफ", "बेसिक ट्रेनिंग", "1 Replacement"] },
+  { id: "standard", name: "सारथी स्टैंडर्ड", price: "₹1,499", duration: "1 साल", highlight: false, features: ["वेरीफाइड स्टाफ", "Proper Training", "3 Replacements", "Backup Support"] },
+  { id: "premium", name: "सारथी प्रीमियम", price: "₹1,999", duration: "1 साल", highlight: true, features: ["वेरीफाइड स्टाफ", "हर छोटी से बड़ी ट्रेनिंग", "5 Replacements", "Backup Support"] }
 ];
 
 function App() {
   return (
-    <div className=\"psa-app\" data-testid=\"psa-app\">
-      {/* ============ HERO ============ */}
-      <header className=\"hero-banner\" data-testid=\"hero-banner\">
-        <div className=\"hero-overlay\" />
-        <div className=\"hero-content\">
-          <img
-            src=\"/assets/logo.jpg\"
-            alt=\"PSA - Path Saarthi Service Agency\"
-            className=\"hero-logo\"
-            data-testid=\"hero-logo\"
-          />
-          <h1 data-testid=\"hero-title\">PSA सारथी टीम</h1>
-          <p className=\"hero-tagline\" data-testid=\"hero-tagline\">
-            सम्मान, विश्वास और सहयोग — यही है पथ सारथी की पहचान।
-          </p>
-          <div className=\"hero-meta\">
-            <span className=\"hero-badge\" data-testid=\"hero-registration\">
-              🏆 रजिस्ट्रेशन: <strong>UDYAM-UP-50-0282257</strong>
-            </span>
-            <span className=\"hero-badge\" data-testid=\"hero-location\">
-              📍 लखनऊ, उत्तर प्रदेश • सेवा All Over India
-            </span>
-          </div>
-        </div>
+    <div className="psa-app">
+      <header className="hero-banner">
+        <h1>PSA सारथी टीम</h1>
+        <p>सम्मान, विश्वास और सहयोग — यही है पथ सारथी की पहचान।</p>
       </header>
-
-      <main className=\"container\">
-        {/* ============ CONTACT ============ */}
-        <section className=\"card\" data-testid=\"section-contact\">
+      <main className="container">
+        <section className="card">
           <h2>संपर्क एवं हेल्पलाइन</h2>
-          <div className=\"contact-grid\">
-            <div className=\"contact-item\">
-              <span className=\"contact-label\">📞 कस्टमर हेल्पलाइन</span>
-              <a
-                href={`tel:+91${CUSTOMER_PHONE}`}
-                className=\"contact-value\"
-                data-testid=\"contact-customer-phone\"
-              >
-                +91 {CUSTOMER_PHONE}
-              </a>
+          <a href={WHATSAPP} className="btn">💬 हमें WhatsApp पर मैसेज करें</a>
+        </section>
+        <section className="card">
+          <h2>हमारे प्लान्स</h2>
+          {PLANS.map(p => (
+            <div key={p.id} className="plan-card">
+              <h3>{p.name}</h3>
+              <p>{p.price} / {p.duration}</p>
             </div>
-            <div className=\"contact-item\">
-              <span className=\"contact-label\">👤 सारथी सदस्य हेल्पलाइन</span>
-              <a
-                href={`tel:+91${STAFF_PHONE}`}
-                className=\"contact-value\"
-                data-testid=\"contact-staff-phone\"
-              >
-                +91 {STAFF_PHONE}
-              </a>
-            </div>
-            <div className=\"contact-item\">
-              <span className=\"contact-label\">✉️ ईमेल</span>
-              <a
-                href={`mailto:${EMAIL}`}
-                className=\"contact-value\"
-                data-testid=\"contact-email\"
-              >
-                {EMAIL}
-              </a>
-            </div>
-          </div>
-          <a
-            href={WHATSAPP}
-            target=\"_blank\"
-            rel=\"noopener noreferrer\"
-            className=\"btn btn-whatsapp-inline\"
-            data-testid=\"contact-whatsapp-btn\"
-          >
-            💬 हमें WhatsApp पर मैसेज करें
-          </a>
+          ))}
         </section>
-
-        {/* ============ FORMS ============ */}
-        <section className=\"card\" data-testid=\"section-forms\">
-          <h2>रजिस्ट्रेशन एवं बुकिंग फ़ॉर्म</h2>
-          <p className=\"muted\">
-            कृपया अपनी आवश्यकता के अनुसार सही फ़ॉर्म चुनें और भरें।
-          </p>
-          <div className=\"forms-grid\">
-            <a
-              href={STAFF_FORM}
-              target=\"_blank\"
-              rel=\"noopener noreferrer\"
-              className=\"form-card\"
-              data-testid=\"staff-registration-form-link\"
-            >
-              <div className=\"form-icon\">👤</div>
-              <h3>स्टाफ रजिस्ट्रेशन</h3>
-              <p>सारथी टीम का हिस्सा बनने के लिए अपनी जानकारी रजिस्टर करें।</p>
-              <span className=\"form-meta\">
-                सहायता: +91 {STAFF_PHONE}
-              </span>
-              <span className=\"form-cta\">फ़ॉर्म भरें →</span>
-            </a>
-            <a
-              href={CUSTOMER_FORM}
-              target=\"_blank\"
-              rel=\"noopener noreferrer\"
-              className=\"form-card\"
-              data-testid=\"customer-booking-form-link\"
-            >
-              <div className=\"form-icon\">🏠</div>
-              <h3>कस्टमर स्टाफ बुकिंग</h3>
-              <p>अपने घर/कार्यस्थल के लिए विश्वसनीय सारथी स्टाफ बुक करें।</p>
-              <span className=\"form-meta\">
-                सहायता: +91 {CUSTOMER_PHONE}
-              </span>
-              <span className=\"form-cta\">फ़ॉर्म भरें →</span>
-            </a>
-          </div>
-        </section>
-
-        {/* ============ PLANS ============ */}
-        <section className=\"card\" data-testid=\"section-plans\">
-          <h2>हमारे प्लान्स — अपनी सुविधा अनुसार चुनें</h2>
-          <p className=\"muted\">
-            हर प्लान की सुविधाएं नीचे स्पष्ट लिखी हैं — तुलना करके अपना उपयुक्त प्लान चुनें।
-          </p>
-          <div className=\"plans-grid\">
-            {PLANS.map((plan) => (
-              <div
-                key={plan.id}
-                className={`plan-card ${plan.highlight ? \"plan-highlight\" : \"\"}`}
-                data-testid={`plan-${plan.id}`}
-              >
-                {plan.highlight && (
-                  <div className=\"plan-ribbon\">⭐ सबसे लोकप्रिय</div>
-                )}
-                <h3 className=\"plan-name\">{plan.name}</h3>
-                <div className=\"plan-price\">
-                  <span className=\"price-amount\">{plan.price}</span>
-                  <span className=\"price-duration\">/ {plan.duration}</span>
-                </div>
-                <ul className=\"plan-features\">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <span className=\"check\">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={CUSTOMER_FORM}
-                  target=\"_blank\"
-                  rel=\"noopener noreferrer\"
-                  className=\"plan-btn\"
-                  data-testid={`plan-${plan.id}-select`}
-                >
-                  यह प्लान चुनें
-                </a>
-              </div>
-            ))}
-          </div>
-          <div className=\"plans-notes\" data-testid=\"plans-notes\">
-            <p>
-              <strong>⚠️ महत्वपूर्ण:</strong> सभी प्लान / सर्विस चार्ज{\" \"}
-              <strong>Non-Refundable</strong> हैं।
-            </p>
-            <p>
-              📍 प्लान की कीमत निश्चित है। कार्यस्थल की दूरी के अनुसार आने-जाने
-              (Conveyance) का खर्च ग्राहक को अलग से वहन करना होगा।
-            </p>
-          </div>
-        </section>
-
-        {/* ============ STANDARDS ============ */}
-        <section className=\"card\" data-testid=\"section-standards\">
-          <h2>हमारी कार्यप्रणाली एवं सारथी मानक</h2>
-          <ul className=\"standards-list\">
-            <li data-testid=\"standard-verification\">
-              <strong>संपूर्ण सत्यापन:</strong> हर सारथी सदस्य का आधार, निवास एवं
-              पुलिस वेरिफिकेशन।
-            </li>
-            <li data-testid=\"standard-training\">
-              <strong>व्यावसायिक ट्रेनिंग:</strong> काम के साथ-साथ व्यवहार एवं
-              शिष्टाचार की विशेष ट्रेनिंग।
-            </li>
-            <li data-testid=\"standard-service\">
-              <strong>सेवा नीति:</strong> हम लोकल एरिया में त्वरित प्रयास करते हैं।
-              आउटस्टेशन / जिले से बाहर के लिए उपलब्धता एवं लॉजिस्टिक्स के अनुसार
-              समय लग सकता है।
-            </li>
-          </ul>
-        </section>
-
-        {/* ============ TRAINING MANUAL ============ */}
-        <section className=\"card\" data-testid=\"section-conduct\">
-          <h2>सारथी आचरण संहिता (Staff Code of Conduct)</h2>
-          <p className=\"muted\">
-            अनुशासन, कड़ा आचरण और उच्च संस्कार ही पथ सारथी की साख हैं। हर सारथी
-            सदस्य इन नियमों के पूर्ण पालन हेतु प्रशिक्षित है।
-          </p>
-          <div className=\"conduct-grid\">
-            {STANDARDS.map((s, idx) => (
-              <div
-                key={idx}
-                className=\"conduct-card\"
-                data-testid={`conduct-${idx}`}
-              >
-                <div className=\"conduct-icon\">{s.icon}</div>
-                <h4>{s.title}</h4>
-                <p>{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ============ PAYMENT ============ */}
-        <section className=\"card\" data-testid=\"section-payment\">
-          <h2>पेमेंट</h2>
-          <p>नीचे दिए गए QR कोड को स्कैन कर भुगतान करें:</p>
-          <img
-            src=\"/assets/qr.png\"
-            alt=\"Path Saarthi Payment QR Code\"
-            className=\"qr-img\"
-            data-testid=\"payment-qr\"
-          />
-          <p className=\"upi-id\" data-testid=\"upi-id\">
-            UPI ID: <strong>9044251050-1@okbizaxis</strong>
-          </p>
-          <p className=\"note\" data-testid=\"payment-note\">
-            <em>नोट: भुगतान का स्क्रीनशॉट हमें WhatsApp पर अवश्य भेजें।</em>
-          </p>
-        </section>
-
-        {/* ============ FOOTER ============ */}
-        <footer className=\"footer\" data-testid=\"footer\">
-          <p className=\"footer-tagline\">
-            हम एग्रीमेंट के पूर्ण पालन के लिए प्रतिबद्ध हैं।
-          </p>
-          <p className=\"copyright\">
-            © {new Date().getFullYear()} Path Saarthi Service Agency (PSA). सर्वाधिकार सुरक्षित।
-          </p>
-          <p className=\"copyright\">
-            रजिस्ट्रेशन: UDYAM-UP-50-0282257 • लखनऊ, उत्तर प्रदेश
-          </p>
-        </footer>
       </main>
-
-      {/* ============ FLOATING WHATSAPP ============ */}
-      <a
-        href={WHATSAPP}
-        target=\"_blank\"
-        rel=\"noopener noreferrer\"
-        className=\"whatsapp-btn\"
-        data-testid=\"whatsapp-floating-btn\"
-        aria-label=\"WhatsApp पर बात करें\"
-      >
-        <span className=\"wa-icon\">💬</span>
-        <span className=\"wa-text\">व्हाट्सएप पर बात करें</span>
-      </a>
     </div>
   );
 }
-
 export default App;
-"
-Observation: Overwrite successful: /app/frontend/src/App.js
